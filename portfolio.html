@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfólio • Savio Felipe</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">SF</a>
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="siteNav">
+          <span class="sr-only">Abrir/fechar menu</span>
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <nav id="siteNav" class="site-nav">
+          <ul>
+            <li><a href="sobre.html">Sobre mim</a></li>
+            <li><a href="formacao.html">Formação</a></li>
+            <li><a href="portfolio.html" aria-current="page">Portfólio</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <nav class="breadcrumb"><a href="index.html">Início</a> / Portfólio</nav>
+      <h1>Projetos</h1>
+      <!--
+        Cards simples de projetos. Substitua os links '#' pelos seus projetos reais
+        (pode ser GitHub Pages, Netlify, Vercel, CodePen, etc.).
+      -->
+      <section class="grid">
+        <article class="project">
+          <h2>Projeto 1 — Site Estático</h2>
+          <p>Site institucional simples usando HTML e CSS puros.</p>
+          <a class="btn small" href="#" target="_blank" rel="noopener">Abrir</a>
+        </article>
+        <article class="project">
+          <h2>Projeto 2 — Layout Responsivo</h2>
+          <p>Layout responsivo com Flexbox e Grid.</p>
+          <a class="btn small" href="#" target="_blank" rel="noopener">Abrir</a>
+        </article>
+        <article class="project">
+          <h2>Projeto 3 — Mini App</h2>
+          <p>Pequeno aplicativo front-end (HTML/CSS/JS).</p>
+          <a class="btn small" href="#" target="_blank" rel="noopener">Abrir</a>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Savio Felipe — Portfólio.</p>
+      </div>
+      <a href="#topo" class="back-to-top" title="Voltar ao topo">↑</a>
+    </footer>
+  </body>
+</html>

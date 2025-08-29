@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <!--
+      Portfólio pessoal (CV online) - Trabalho de Fundamentos da Programação Web
+      Requisitos atendidos:
+      - Site funcional com pelo menos 4 links (menu fixo em todas as páginas).
+      - Páginas: Sobre, Formação, Portfólio, Contato.
+      - Somente HTML e CSS puros para o layout (sem Bootstrap). JS opcional para UX.
+      - Código comentado para facilitar a correção.
+    -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfólio • Savio Felipe</title>
+    <meta name="description" content="Portfólio pessoal de Savio Felipe — currículo online, projetos e formas de contato." />
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <!--
+      Cabeçalho presente em TODAS as páginas, com navegação interna.
+      O atributo aria-current="page" destaca a página ativa para leitores de tela.
+    -->
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html" aria-label="Página inicial">SF</a>
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="siteNav">
+          <span class="sr-only">Abrir/fechar menu</span>
+          <!-- Ícone hambúrguer puro CSS -->
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <nav id="siteNav" class="site-nav">
+          <ul>
+            <li><a href="sobre.html">Sobre mim</a></li>
+            <li><a href="formacao.html">Formação</a></li>
+            <li><a href="portfolio.html">Portfólio</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- Seção de destaque/hero -->
+      <section class="hero">
+        <h1>Olá! Eu sou <span class="highlight">Savio Felipe</span>.</h1>
+        <p class="lead">
+          Este é meu portfólio pessoal, onde você encontra um pouco sobre mim, minha formação,
+          projetos e como falar comigo.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="sobre.html">Conhecer</a>
+          <a class="btn outline" href="portfolio.html">Ver projetos</a>
+        </div>
+      </section>
+
+      <!-- Seção de resumo rápido com links internos úteis -->
+      <section class="cards">
+        <article class="card">
+          <h2>Sobre mim</h2>
+          <p>Gosto de tecnologia, programação e resolver problemas do mundo real com software.</p>
+          <a class="text-link" href="sobre.html" aria-label="Ir para a página Sobre mim">Ler mais →</a>
+        </article>
+        <article class="card">
+          <h2>Formação</h2>
+          <p>Graduação em andamento e cursos complementares. Idiomas e certificações.</p>
+          <a class="text-link" href="formacao.html">Ver formação →</a>
+        </article>
+        <article class="card">
+          <h2>Portfólio</h2>
+          <p>Projetos acadêmicos e pessoais, com links e descrições.</p>
+          <a class="text-link" href="portfolio.html">Explorar projetos →</a>
+        </article>
+        <article class="card">
+          <h2>Contato</h2>
+          <p>Formulário visual (HTML/CSS) com campos para nome, e-mail e mensagem.</p>
+          <a class="text-link" href="contato.html">Falar comigo →</a>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Savio Felipe — Portfólio.</p>
+        <p class="muted">Última atualização: 2025-08-29 00:39</p>
+      </div>
+      <a href="#topo" class="back-to-top" title="Voltar ao topo">↑</a>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sobre mim • Savio Felipe</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">SF</a>
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="siteNav">
+          <span class="sr-only">Abrir/fechar menu</span>
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <nav id="siteNav" class="site-nav">
+          <ul>
+            <!-- aria-current marca o link ativo -->
+            <li><a href="sobre.html" aria-current="page">Sobre mim</a></li>
+            <li><a href="formacao.html">Formação</a></li>
+            <li><a href="portfolio.html">Portfólio</a></li>
+            <li><a href="contato.html">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <nav class="breadcrumb"><a href="index.html">Início</a> / Sobre mim</nav>
+      <article class="prose">
+        <h1>Sobre mim</h1>
+        <p>
+          Sou o Savio Felipe, estudante de tecnologia e apaixonado por desenvolvimento web.
+          Tenho interesse em <strong>Front-end</strong>, <strong>UI/UX</strong> e também em
+          <strong>resolução de problemas</strong> usando lógica de programação.
+        </p>
+        <h2>Hobbies</h2>
+        <ul>
+          <li>Aprender novas linguagens de programação;</li>
+          <li>Praticar lógica com desafios e exercícios;</li>
+          <li>Explorar design e acessibilidade na web.</li>
+        </ul>
+        <h2>Objetivos</h2>
+        <p>
+          Consolidar conhecimentos fundamentais, construir projetos reais e evoluir para vagas
+          de desenvolvimento web júnior.
+        </p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Savio Felipe — Portfólio.</p>
+      </div>
+      <a href="#topo" class="back-to-top" title="Voltar ao topo">↑</a>
+    </footer>
+  </body>
+</html>

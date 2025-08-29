@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contato • Savio Felipe</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script defer src="js/main.js"></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">SF</a>
+        <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="siteNav">
+          <span class="sr-only">Abrir/fechar menu</span>
+          <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </button>
+        <nav id="siteNav" class="site-nav">
+          <ul>
+            <li><a href="sobre.html">Sobre mim</a></li>
+            <li><a href="formacao.html">Formação</a></li>
+            <li><a href="portfolio.html">Portfólio</a></li>
+            <li><a href="contato.html" aria-current="page">Contato</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <nav class="breadcrumb"><a href="index.html">Início</a> / Contato</nav>
+      <h1>Contato</h1>
+      <!--
+        O enunciado pede apenas a PARTE VISUAL do formulário.
+        Portanto, abaixo temos um formulário com os inputs solicitados:
+        nome, e-mail e mensagem. A submissão real do backend não é necessária.
+      -->
+      <form class="contact-form" action="#" method="post" novalidate>
+        <div class="form-field">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" placeholder="Seu nome completo" required />
+        </div>
+        <div class="form-field">
+          <label for="email">E-mail</label>
+          <input id="email" name="email" type="email" placeholder="seuemail@exemplo.com" required />
+        </div>
+        <div class="form-field">
+          <label for="mensagem">Mensagem</label>
+          <textarea id="mensagem" name="mensagem" rows="6" placeholder="Escreva sua mensagem..." maxlength="500" required></textarea>
+          <small id="contador" class="muted">0/500</small>
+        </div>
+        <div class="form-actions">
+          <button class="btn" type="submit">Enviar</button>
+          <button class="btn outline" type="reset">Limpar</button>
+        </div>
+      </form>
+      <p class="muted tip">Dica: você pode também me enviar um e-mail direto: <a href="mailto:contato@saviofelipe.dev">contato@saviofelipe.dev</a></p>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <p>© <span id="year"></span> Savio Felipe — Portfólio.</p>
+      </div>
+      <a href="#topo" class="back-to-top" title="Voltar ao topo">↑</a>
+    </footer>
+  </body>
+</html>
