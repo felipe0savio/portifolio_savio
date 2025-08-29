@@ -1,0 +1,263 @@
+/* === CSS PURO (sem frameworks) ==========================================
+   Paleta suave e layout responsivo com Flexbox e Grid.
+   Comentários explicam as principais decisões de estilo.
+============================================================================= */
+
+:root {
+  /* Variáveis de cor/tipografia para manter consistência */
+  --bg: #0f172a;        /* fundo escuro (slate-900) */
+  --panel: #111827;     /* painel (gray-900) */
+  --text: #e5e7eb;      /* texto (gray-200) */
+  --muted: #94a3b8;     /* texto secundário */
+  --primary: #60a5fa;   /* azul suave */
+  --primary-2: #3b82f6; /* azul um pouco mais saturado */
+  --accent: #22d3ee;    /* ciano para detalhes */
+  --radius: 16px;
+  --shadow: 0 10px 25px rgba(0,0,0,.3);
+
+  --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(1200px 800px at 20% 0%, #0b1324, var(--bg));
+  color: var(--text);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+/* Utilidades */
+.container {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+/* Header fixo simples */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(17,24,39,.7);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+}
+
+.brand {
+  display: inline-grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #0b1020;
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: var(--shadow);
+}
+
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+}
+
+.site-nav a {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text);
+  transition: transform .15s ease, background .2s ease;
+}
+
+.site-nav a[aria-current="page"],
+.site-nav a:hover {
+  background: rgba(96,165,250,.25);
+  transform: translateY(-1px);
+}
+
+/* Botão hambúrguer para telas pequenas */
+.nav-toggle {
+  display: none;
+  background: transparent;
+  border: 0;
+  padding: 8px;
+}
+.nav-toggle .bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  margin: 4px 0;
+  border-radius: 2px;
+}
+
+@media (max-width: 720px) {
+  .nav-toggle { display: inline-block; }
+  .site-nav { display: none; }
+  .site-nav.open { display: block; }
+  .site-nav ul { flex-direction: column; gap: 6px; padding: 8px 0; }
+}
+
+/* Hero */
+.hero {
+  padding: 56px 0 18px;
+}
+.hero h1 {
+  font-size: clamp(28px, 6vw, 44px);
+  line-height: 1.2;
+  margin: 6px 0 10px;
+}
+.highlight {
+  color: var(--accent);
+}
+.lead { color: var(--muted); font-size: 1.05rem; }
+
+.cta-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: #0b1020;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  cursor: pointer;
+}
+.btn:hover { filter: brightness(1.03); transform: translateY(-1px); }
+.btn.outline {
+  background: transparent;
+  color: var(--text);
+  border-color: rgba(255,255,255,.15);
+}
+.btn.small { padding: 8px 12px; font-size: .95rem; }
+
+/* Cards resumo */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  padding: 24px 0 48px;
+}
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+}
+.card h2 { margin-top: 8px; }
+
+@media (max-width: 980px) { .cards { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .cards { grid-template-columns: 1fr; } }
+
+/* Breadcrumb e prosa */
+.breadcrumb { margin-top: 18px; color: var(--muted); }
+.breadcrumb a { color: var(--text); }
+
+.prose h1 { margin-top: 8px; }
+.prose h2 { margin-top: 22px; }
+
+/* Grid de projetos */
+.grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 14px 0 48px;
+}
+.project {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding: 16px;
+  box-shadow: var(--shadow);
+}
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+
+/* Formulário */
+.contact-form {
+  background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding: 18px;
+  box-shadow: var(--shadow);
+  margin-bottom: 26px;
+}
+.form-field { margin-bottom: 14px; }
+label { display: block; margin-bottom: 6px; }
+input, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(15,23,42,.8);
+  color: var(--text);
+  outline: none;
+}
+input:focus, textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(34,211,238,.2);
+}
+.form-actions { display: flex; gap: 12px; }
+
+/* Rodapé */
+.site-footer {
+  border-top: 1px solid rgba(255,255,255,.06);
+  margin-top: 24px;
+  position: relative;
+}
+.footer-inner {
+  padding: 18px 0 38px;
+  color: var(--muted);
+}
+.back-to-top {
+  position: absolute;
+  right: 20px;
+  bottom: 12px;
+  text-decoration: none;
+  color: var(--text);
+  border: 1px solid rgba(255,255,255,.15);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+/* Pequena melhoria de impressão (remove fundos pesados) */
+@media print {
+  body { background: #fff; color: #000; }
+  .site-header, .site-footer, .back-to-top { display: none; }
+  .card, .project, .contact-form { border: 1px solid #000; box-shadow: none; }
+}
